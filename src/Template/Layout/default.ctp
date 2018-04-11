@@ -3,12 +3,9 @@
 <head>
 	<?php echo $this->Html->charset() ?>
 	<meta namephp echo"viewport" contentphp echo"widthphp echodevice-width, initial-scalephp echo1.0">
-	<title>
-		<?php echo $this->fetch('title') ?>
-	</title>
+	<title><?php echo $this->fetch('title') ?></title>
 	<?php echo $this->Html->meta('icon') ?>
 
-	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->css('style.css'); ?>
 	<?php echo $this->Html->script('jquery-3.1.1.min.js'); ?>
 
