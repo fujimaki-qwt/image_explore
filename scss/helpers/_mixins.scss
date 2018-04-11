@@ -1,0 +1,37 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// ミックスイン設定 ////////////
+
+
+//// ベンダープレフィックス自動付与
+$set-prefix: '' , -moz- , -webkit- , -o- , -ms-;
+@mixin PropertySetPrefix($name, $value) { // ベンダープレフィックスを自動で付与する
+	@each $prefix in $set-prefix {
+		#{$prefix}#{$name}: $value;
+	}
+}
+@mixin ValueSetPrefix($name, $value) { // 値にプレフィックスを付与
+	@each $prefix in $set-prefix {
+		#{$name}: #{$prefix}$value;
+	}
+}
+
+
+//// アニメーション
+@mixin animationOn {
+	@include PropertySetPrefix(transition, 0.35s); //ベンダープレフィックス自動付与
+}
+@mixin animationOff {
+	@include PropertySetPrefix(transition, 0s); //ベンダープレフィックス自動付与
+}
+
+/// マテリアルアイコン
+@mixin materialIcons {
+	position: absolute;
+	font-family: 'Material Icons';
+	font-size: 24px;
+	line-height: 1;
+	white-space: nowrap;
+}
+

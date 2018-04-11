@@ -1,0 +1,277 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// 余白設定 ////////////
+
+.border_spacer {
+	border: none;
+	border-bottom: 1px dashed $colorMonoPale;
+}
+
+.margin_auto { margin: auto;}
+
+.margin_xsmall,
+.margin_small { margin: $spaceXSmall;}
+.margin_medium { margin: $spaceSmall;}
+.margin_large { margin: $spaceMedium;}
+.margin_xlarge { margin: $spaceLarge;}
+
+.margin_t_xsmall,
+.margin_t_small { margin-top: $spaceXSmall;}
+.margin_t_medium { margin-top: $spaceSmall;}
+.margin_t_large { margin-top: $spaceMedium;}
+.margin_t_xlarge { margin-top: $spaceLarge;}
+
+.margin_b_xsmall,
+.margin_b_small { margin-bottom: $spaceXSmall;}
+.margin_b_medium { margin-bottom: $spaceSmall;}
+.margin_b_large { margin-bottom: $spaceMedium;}
+.margin_b_xlarge { margin-bottom: $spaceLarge;}
+
+.margin_l_xsmall,
+.margin_l_small { margin-left: $spaceXSmall;}
+.margin_l_medium { margin-left: $spaceSmall;}
+.margin_l_large { margin-left: $spaceMedium;}
+.margin_l_xlarge { margin-left: $spaceLarge;}
+
+.margin_r_xsmall,
+.margin_r_small { margin-right: $spaceXSmall;}
+.margin_r_medium { margin-right: $spaceSmall;}
+.margin_r_large { margin-right: $spaceMedium;}
+.margin_r_xlarge { margin-right: $spaceLarge;}
+
+.margin_s_xsmall,
+.margin_s_small { margin-left: $spaceXSmall; margin-right: $spaceXSmall;}
+.margin_s_medium { margin-left: $spaceSmall; margin-right: $spaceSmall;}
+.margin_s_large { margin-left: $spaceMedium; margin-right: $spaceMedium;}
+.margin_s_xlarge { margin-left: $spaceLarge; margin-right: $spaceLarge;}
+
+.margin_v_xsmall,
+.margin_v_small { margin-top: $spaceXSmall; margin-bottom: $spaceXSmall;}
+.margin_v_medium { margin-top: $spaceSmall; margin-bottom: $spaceSmall;}
+.margin_v_large { margin-top: $spaceMedium; margin-bottom: $spaceMedium;}
+.margin_v_xlarge { margin-top: $spaceLarge; margin-bottom: $spaceLarge;}
+
+.margin_t_none { margin-top: 0;}
+.margin_b_none { margin-bottom: 0;}
+.margin_l_none { margin-left: 0;}
+.margin_r_none { margin-right: 0;}
+
+.padding_xsmall,
+.padding_small { padding: $spaceXSmall;}
+.padding_medium { padding: $spaceSmall;}
+.padding_large { padding: $spaceMedium;}
+.padding_xlarge { padding: $spaceLarge;}
+
+.padding_t_xsmall,
+.padding_t_small { padding-top: $spaceXSmall;}
+.padding_t_medium { padding-top: $spaceSmall;}
+.padding_t_large { padding-top: $spaceMedium;}
+.padding_t_xlarge { padding-top: $spaceLarge;}
+
+.padding_b_xsmall,
+.padding_b_small { padding-bottom: $spaceXSmall;}
+.padding_b_medium { padding-bottom: $spaceSmall;}
+.padding_b_large { padding-bottom: $spaceMedium;}
+.padding_b_xlarge { padding-bottom: $spaceLarge;}
+
+.padding_l_xsmall,
+.padding_l_small { padding-left: $spaceXSmall;}
+.padding_l_medium { padding-left: $spaceSmall;}
+.padding_l_large { padding-left: $spaceMedium;}
+.padding_l_xlarge { padding-left: $spaceLarge;}
+
+.padding_r_xsmall,
+.padding_r_small { padding-right: $spaceXSmall;}
+.padding_r_medium { padding-right: $spaceSmall;}
+.padding_r_large { padding-right: $spaceMedium;}
+.padding_r_xlarge { padding-right: $spaceLarge;}
+
+.padding_s_xsmall,
+.padding_s_small { padding-left: $spaceXSmall; padding-right: $spaceXSmall;}
+.padding_s_medium { padding-left: $spaceSmall; padding-right: $spaceSmall;}
+.padding_s_large { padding-left: $spaceMedium; padding-right: $spaceMedium;}
+.padding_s_xlarge { padding-left: $spaceLarge; padding-right: $spaceLarge;}
+
+.padding_v_xsmall,
+.padding_v_small { padding-top: $spaceXSmall; padding-bottom: $spaceXSmall;}
+.padding_v_medium { padding-top: $spaceSmall; padding-bottom: $spaceSmall;}
+.padding_v_large { padding-top: $spaceMedium; padding-bottom: $spaceMedium;}
+.padding_v_xlarge { padding-top: $spaceLarge; padding-bottom: $spaceLarge;}
+
+.padding_none { padding: 0;}
+.padding_t_none { padding-top: 0;}
+.padding_b_none { padding-bottom: 0;}
+.padding_l_none { padding-left: 0;}
+.padding_r_none { padding-right: 0;}
+
+.n_margin_t_xsmall,
+.n_margin_t_small { margin-top: -$spaceXSmall;}
+.n_margin_t_medium { margin-top: -$spaceSmall;}
+.n_margin_t_large { margin-top: -$spaceMedium;}
+.n_margin_t_xlarge { margin-top: -$spaceLarge;}
+
+.n_margin_b_xsmall,
+.n_margin_b_small { margin-bottom: -$spaceXSmall;}
+.n_margin_b_medium { margin-bottom: -$spaceSmall;}
+.n_margin_b_large { margin-bottom: -$spaceMedium;}
+.n_margin_b_xlarge { margin-bottom: -$spaceLarge;}
+
+.n_margin_l_xsmall,
+.n_margin_l_small { margin-left: -$spaceXSmall;}
+.n_margin_l_medium { margin-left: -$spaceSmall;}
+.n_margin_l_large { margin-left: -$spaceMedium;}
+.n_margin_l_xlarge { margin-left: -$spaceLarge;}
+
+.n_margin_r_xsmall,
+.n_margin_r_small { margin-right: -$spaceXSmall;}
+.n_margin_r_medium { margin-right: -$spaceSmall;}
+.n_margin_r_large { margin-right: -$spaceMedium;}
+.n_margin_r_xlarge { margin-right: -$spaceLarge;}
+
+.n_margin_s_xsmall,
+.n_margin_s_small { margin-left: -$spaceXSmall; margin-right: -$spaceXSmall;}
+.n_margin_s_medium { margin-left: -$spaceSmall; margin-right: -$spaceSmall;}
+.n_margin_s_large { margin-left: -$spaceMedium; margin-right: -$spaceMedium;}
+.n_margin_s_xlarge { margin-left: -$spaceLarge; margin-right: -$spaceLarge;}
+
+.n_margin_v_xsmall,
+.n_margin_v_small { margin-top: -$spaceXSmall; margin-bottom: -$spaceXSmall;}
+.n_margin_v_medium { margin-top: -$spaceSmall; margin-bottom: -$spaceSmall;}
+.n_margin_v_large { margin-top: -$spaceMedium; margin-bottom: -$spaceMedium;}
+.n_margin_v_xlarge { margin-top: -$spaceLarge; margin-bottom: -$spaceLarge;}
+
+@media (min-width: $screen-sm-min) { // タブレットサイズ以上
+	.margin_auto { margin: auto;}
+
+	.margin_xsmall { margin: $spaceXSmall;}
+	.margin_small { margin: $spaceSmall;}
+	.margin_medium { margin: $spaceMedium;}
+	.margin_large { margin: $spaceLarge;}
+	.margin_xlarge { margin: $spaceXLarge;}
+
+	.margin_t_xsmall { margin-top: $spaceXSmall;}
+	.margin_t_small { margin-top: $spaceSmall;}
+	.margin_t_medium { margin-top: $spaceMedium;}
+	.margin_t_large { margin-top: $spaceLarge;}
+	.margin_t_xlarge { margin-top: $spaceXLarge;}
+
+	.margin_b_xsmall { margin-bottom: $spaceXSmall;}
+	.margin_b_small { margin-bottom: $spaceSmall;}
+	.margin_b_medium { margin-bottom: $spaceMedium;}
+	.margin_b_large { margin-bottom: $spaceLarge;}
+	.margin_b_xlarge { margin-bottom: $spaceXLarge;}
+
+	.margin_l_xsmall { margin-left: $spaceXSmall;}
+	.margin_l_small { margin-left: $spaceSmall;}
+	.margin_l_medium { margin-left: $spaceMedium;}
+	.margin_l_large { margin-left: $spaceLarge;}
+	.margin_l_xlarge { margin-left: $spaceXLarge;}
+
+	.margin_r_xsmall { margin-right: $spaceXSmall;}
+	.margin_r_small { margin-right: $spaceSmall;}
+	.margin_r_medium { margin-right: $spaceMedium;}
+	.margin_r_large { margin-right: $spaceLarge;}
+	.margin_r_xlarge { margin-right: $spaceXLarge;}
+
+	.margin_s_xsmall { margin-left: $spaceXSmall; margin-right: $spaceXSmall;}
+	.margin_s_small { margin-left: $spaceSmall; margin-right: $spaceSmall;}
+	.margin_s_medium { margin-left: $spaceMedium; margin-right: $spaceMedium;}
+	.margin_s_large { margin-left: $spaceLarge; margin-right: $spaceLarge;}
+	.margin_s_xlarge { margin-left: $spaceXLarge; margin-right: $spaceXLarge;}
+
+	.margin_v_xsmall { margin-top: $spaceXSmall; margin-bottom: $spaceXSmall;}
+	.margin_v_small { margin-top: $spaceSmall; margin-bottom: $spaceSmall;}
+	.margin_v_medium { margin-top: $spaceMedium; margin-bottom: $spaceMedium;}
+	.margin_v_large { margin-top: $spaceLarge; margin-bottom: $spaceLarge;}
+	.margin_v_xlarge { margin-top: $spaceXLarge; margin-bottom: $spaceXLarge;}
+
+	.margin_t_none { margin-top: 0;}
+	.margin_b_none { margin-bottom: 0;}
+	.margin_l_none { margin-left: 0;}
+	.margin_r_none { margin-right: 0;}
+
+	.padding_xsmall { padding: $spaceXSmall;}
+	.padding_small { padding: $spaceSmall;}
+	.padding_medium { padding: $spaceMedium;}
+	.padding_large { padding: $spaceLarge;}
+	.padding_xlarge { padding: $spaceXLarge;}
+
+	.padding_t_xsmall { padding-top: $spaceXSmall;}
+	.padding_t_small { padding-top: $spaceSmall;}
+	.padding_t_medium { padding-top: $spaceMedium;}
+	.padding_t_large { padding-top: $spaceLarge;}
+	.padding_t_xlarge { padding-top: $spaceXLarge;}
+
+	.padding_b_xsmall { padding-bottom: $spaceXSmall;}
+	.padding_b_small { padding-bottom: $spaceSmall;}
+	.padding_b_medium { padding-bottom: $spaceMedium;}
+	.padding_b_large { padding-bottom: $spaceLarge;}
+	.padding_b_xlarge { padding-bottom: $spaceXLarge;}
+
+	.padding_l_xsmall { padding-left: $spaceXSmall;}
+	.padding_l_small { padding-left: $spaceSmall;}
+	.padding_l_medium { padding-left: $spaceMedium;}
+	.padding_l_large { padding-left: $spaceLarge;}
+	.padding_l_xlarge { padding-left: $spaceXLarge;}
+
+	.padding_r_xsmall { padding-right: $spaceXSmall;}
+	.padding_r_small { padding-right: $spaceSmall;}
+	.padding_r_medium { padding-right: $spaceMedium;}
+	.padding_r_large { padding-right: $spaceLarge;}
+	.padding_r_xlarge { padding-right: $spaceXLarge;}
+
+	.padding_s_xsmall { padding-left: $spaceXSmall; padding-right: $spaceXSmall;}
+	.padding_s_small { padding-left: $spaceSmall; padding-right: $spaceSmall;}
+	.padding_s_medium { padding-left: $spaceMedium; padding-right: $spaceMedium;}
+	.padding_s_large { padding-left: $spaceLarge; padding-right: $spaceLarge;}
+	.padding_s_xlarge { padding-left: $spaceXLarge; padding-right: $spaceXLarge;}
+
+	.padding_v_xsmall { padding-top: $spaceXSmall; padding-bottom: $spaceXSmall;}
+	.padding_v_small { padding-top: $spaceSmall; padding-bottom: $spaceSmall;}
+	.padding_v_medium { padding-top: $spaceMedium; padding-bottom: $spaceMedium;}
+	.padding_v_large { padding-top: $spaceLarge; padding-bottom: $spaceLarge;}
+	.padding_v_xlarge { padding-top: $spaceXLarge; padding-bottom: $spaceXLarge;}
+
+	.padding_none { padding: 0;}
+	.padding_t_none { padding-top: 0;}
+	.padding_b_none { padding-bottom: 0;}
+	.padding_l_none { padding-left: 0;}
+	.padding_r_none { padding-right: 0;}
+
+	.n_margin_t_xsmall { margin-top: -$spaceXSmall;}
+	.n_margin_t_small { margin-top: -$spaceSmall;}
+	.n_margin_t_medium { margin-top: -$spaceMedium;}
+	.n_margin_t_large { margin-top: -$spaceLarge;}
+	.n_margin_t_xlarge { margin-top: -$spaceXLarge;}
+
+	.n_margin_b_xsmall { margin-bottom: -$spaceXSmall;}
+	.n_margin_b_small { margin-bottom: -$spaceSmall;}
+	.n_margin_b_medium { margin-bottom: -$spaceMedium;}
+	.n_margin_b_large { margin-bottom: -$spaceLarge;}
+	.n_margin_b_xlarge { margin-bottom: -$spaceXLarge;}
+
+	.n_margin_l_xsmall { margin-left: -$spaceXSmall;}
+	.n_margin_l_small { margin-left: -$spaceSmall;}
+	.n_margin_l_medium { margin-left: -$spaceMedium;}
+	.n_margin_l_large { margin-left: -$spaceLarge;}
+	.n_margin_l_xlarge { margin-left: -$spaceXLarge;}
+
+	.n_margin_r_xsmall { margin-right: -$spaceXSmall;}
+	.n_margin_r_small { margin-right: -$spaceSmall;}
+	.n_margin_r_medium { margin-right: -$spaceMedium;}
+	.n_margin_r_large { margin-right: -$spaceLarge;}
+	.n_margin_r_xlarge { margin-right: -$spaceXLarge;}
+
+	.n_margin_s_xsmall { margin-left: -$spaceXSmall; margin-right: -$spaceXSmall;}
+	.n_margin_s_small { margin-left: -$spaceSmall; margin-right: -$spaceSmall;}
+	.n_margin_s_medium { margin-left: -$spaceMedium; margin-right: -$spaceMedium;}
+	.n_margin_s_large { margin-left: -$spaceLarge; margin-right: -$spaceLarge;}
+	.n_margin_s_xlarge { margin-left: -$spaceXLarge; margin-right: -$spaceXLarge;}
+
+	.n_margin_v_xsmall { margin-top: -$spaceXSmall; margin-bottom: -$spaceXSmall;}
+	.n_margin_v_small { margin-top: -$spaceSmall; margin-bottom: -$spaceSmall;}
+	.n_margin_v_medium { margin-top: -$spaceMedium; margin-bottom: -$spaceMedium;}
+	.n_margin_v_large { margin-top: -$spaceLarge; margin-bottom: -$spaceLarge;}
+	.n_margin_v_xlarge { margin-top: -$spaceXLarge; margin-bottom: -$spaceXLarge;}
+}

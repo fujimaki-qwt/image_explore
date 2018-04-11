@@ -5,6 +5,7 @@ tmp/cache/persistent/*
 tmp/cache/cake*
 logs/debug.log
 logs/error.log
+webroot/css/style.css
 !empty
 
 # User specific & automatically generated files #

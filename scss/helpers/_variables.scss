@@ -1,0 +1,71 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// Bootstrap変数定義の上書き処理 ////////////
+// $grid-gutter-width: 0; // グリッドシステムの余白設定
+
+
+///////////////////////// 変数定義 /////////////////////////
+//
+//  ※初期設定で記述されている変数は消さないでください！
+//
+///////////////////////////////////////////////////////////
+
+
+// フォントファミリー
+$fontFamilyBase: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$fontFamilyMin: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+
+
+// カラー
+$colorMonoDark: #000000;
+$colorMonoDeep: #555;
+$colorMonoPale: #afb4b9;
+$colorMonoClear: #f6f6f6;
+$colorMonoLight: #fff;
+
+$colorMain: #948664;
+$colorMainDark: #6e6347; //暗い
+$colorMainDeep: #6e6347; //やや暗い
+$colorMainPale: #A08F68; //やや明るい
+$colorMainClear: #f3ebdf; //明るい
+$colorMainLight: #f7f4ee; //かなり明るい
+
+$colorAccent: #e44e5e;
+$colorAccentDark: darken($colorAccent, 15%); //暗い
+$colorAccentDeep: darken($colorAccent, 30%); //やや暗い
+$colorAccentPale: lighten($colorAccent, 15%); //やや明るい
+$colorAccentClear: #f6e6e7; //明るい
+$colorAccentLight: #fff6f7; //かなり明るい
+
+$colorFontBase: #333;
+
+$colorTransLight: rgba(255,255,255,.75);
+$colorTransDark: rgba(0,0,0,.75);
+$colorTransShadow: 0 1px 5px rgba(0,0,0,.15);
+
+
+// スペース
+$spaceXSmall: 8px;
+$spaceSmall: 15px;
+$spaceMedium: 30px;
+$spaceLarge: 45px;
+$spaceXLarge: 60px;
+
+
+// フォントサイズ
+$fontULarge: 36px;
+$fontXLarge: 28px;
+$fontLarge: 23px;
+$fontMedium: 18px;
+$fontBase: 14px;
+$fontSmall: 12px;
+$fontNotice: 11px;
+
+$fontULargePc: 40px;
+$fontXLargePc: 32px;
+$fontLargePc: 26px;
+$fontMediumPc: 20px;
+$fontBasePc: 16px;
+$fontSmallPc: 14px;
+$fontNoticePc: 12px;

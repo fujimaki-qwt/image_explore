@@ -1,0 +1,260 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// レスポンシブ用 拡張設定 ////////////
+$ResponsiveTableBlockSpace: $spaceSmall;
+
+
+// responsive_table_week
+//--------------------------------------------------------------- //
+.responsive_table_week {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	tr {
+		display: table-cell;
+		border: 1px solid $colorMonoPale;
+		border-bottom: none;
+			&:first-of-type {
+				width: 12em;
+			}
+		th,td {
+			text-align: center;
+			display: block;
+			@extend .padding_xsmall;
+			border-bottom: 1px solid $colorMonoPale;
+		}
+		th {
+			background: $colorMonoClear;
+		}
+	}
+}
+
+
+// responsive_table_block
+//--------------------------------------------------------------- //
+.responsive_table_block {
+	img {
+		max-width: none;
+	}
+	[class*="col"] {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) { // SPサイズ（横）以下
+
+	// responsive_table_week
+	//--------------------------------------------------------------- //
+	.responsive_table_week {
+		tr {
+			display: table-row;
+			width: 100%;
+			th,td {
+				display: table-cell;
+				vertical-align: middle;
+				float: none;
+				width: auto;
+				border: 1px solid $colorMonoPale;
+			}
+		}
+	}
+
+
+	// responsive_table_block & responsive_table_block_sp
+	//--------------------------------------------------------------- //
+	.responsive_table_block {
+		margin-top: -$ResponsiveTableBlockSpace/2;
+		[class*="col"] {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+	.responsive_table_block,
+	.responsive_table_block>.table_caption,
+	.responsive_table_block>tbody,
+	.responsive_table_block>thead,
+	.responsive_table_block>tfoot,
+	.responsive_table_block>tbody>tr,
+	.responsive_table_block>thead>tr,
+	.responsive_table_block>tfoot>tr,
+	.responsive_table_block>tbody>tr>th,
+	.responsive_table_block>thead>tr>th,
+	.responsive_table_block>tfoot>th,
+	.responsive_table_block>tbody>tr>td,
+	.responsive_table_block>thead>tr>td,
+	.responsive_table_block>tfoot>td,
+	.responsive_table_block_row,
+	.responsive_table_block_cell {
+		display: block;
+		float: none !important;
+		img {
+			max-width: 100%;
+		}
+	}
+	.responsive_table_block>tbody>tr,
+	.responsive_table_block>thead>tr,
+	.responsive_table_block>tfoot>tr {
+	}
+	.responsive_table_block>tbody>tr>th,
+	.responsive_table_block>thead>tr>th,
+	.responsive_table_block>tfoot>th,
+	.responsive_table_block>tbody>tr>td,
+	.responsive_table_block>thead>tr>td,
+	.responsive_table_block>tfoot>td,
+	.responsive_table_block_cell,
+	.responsive_table_block_sp_cell {
+		padding-top: $ResponsiveTableBlockSpace/2;
+	}
+
+	.responsive_table_block_sp {
+		display: table;
+		border-collapse: collapse;
+		>tbody {
+			display: table-row-group;
+		}
+		>thead {
+			display: table-header-group;
+		}
+		>tfoot {
+			display: table-footer-group;
+		}
+		>tbody,>thead,>tfoot {
+			>tr {
+				display: table-row;
+			}
+			>th,>td {
+				display: table-cell;
+				vertical-align: middle;
+				font-weight: normal;
+			}
+		}
+	}
+	.responsive_table_block_sp_cell {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.responsive_rotate {
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+}
+
+@media (max-width: $screen-sm-max) { // タブレットサイズ以下
+}
+
+@media (max-width: $screen-md-max) { // PCサイズ（小）以下
+}
+
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+}
+
+
+@media (min-width: $screen-xs-min) { // SPサイズ（横）以上
+}
+
+@media (min-width: $screen-sm-min) { // タブレットサイズ以上
+
+
+	// responsive_table_block
+	//--------------------------------------------------------------- //
+	.responsive_table_block {
+		margin-left: -$ResponsiveTableBlockSpace;
+		margin-right: -$ResponsiveTableBlockSpace;
+		display: table;
+		border-collapse: collapse;
+		>tbody {
+			display: table-row-group;
+		}
+		>thead {
+			display: table-header-group;
+		}
+		>tfoot {
+			display: table-footer-group;
+		}
+		>tbody,>thead,>tfoot {
+			>tr {
+				display: table-row;
+			}
+			>th,>td {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+	.responsive_table_block_row {
+		display: table-row;
+	}
+	.responsive_table_block_cell {
+		display: table-cell;
+		float: none !important;
+		vertical-align: middle;
+		padding-left: $ResponsiveTableBlockSpace;
+		padding-right: $ResponsiveTableBlockSpace;
+		img {
+			max-width: $container-tablet / 2;
+		}
+	}
+
+
+	// responsive_table_block_sp
+	//--------------------------------------------------------------- //
+
+	.responsive_table_block_sp,
+	.responsive_table_block_sp>tbody,
+	.responsive_table_block_sp>thead,
+	.responsive_table_block_sp>tfoot,
+	.responsive_table_block_sp>tbody>tr,
+	.responsive_table_block_sp>thead>tr,
+	.responsive_table_block_sp>tfoot>tr,
+	.responsive_table_block_sp>tbody>tr>th,
+	.responsive_table_block_sp>thead>tr>th,
+	.responsive_table_block_sp>tfoot>tr>th,
+	.responsive_table_block_sp>tbody>tr>td,
+	.responsive_table_block_sp>thead>tr>td,
+	.responsive_table_block_sp>tfoot>tr>td,
+	.responsive_table_block_sp_cell {
+		display: block;
+		font-weight: normal;
+	}
+	.responsive_table_block_sp>tbody>tr>th,
+	.responsive_table_block_sp>thead>tr>th,
+	.responsive_table_block_sp>tfoot>tr>th,
+	.responsive_table_block_sp>tbody>tr>td,
+	.responsive_table_block_sp>thead>tr>td,
+	.responsive_table_block_sp>tfoot>tr>td,
+	.responsive_table_block_sp_cell {
+		margin-top: -1px;
+		padding-left: $ResponsiveTableBlockSpace;
+		padding-right: $ResponsiveTableBlockSpace;
+	}
+}
+
+@media (min-width: $screen-md-min) { // PCサイズ（小）以上
+
+	// responsive_table_block
+	//--------------------------------------------------------------- //
+	.responsive_table_block_cell {
+		img {
+			max-width: $container-desktop / 2;
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min) { // PCサイズ（大）以上
+
+	// responsive_table_block
+	//--------------------------------------------------------------- //
+	.responsive_table_block_cell {
+		img {
+			max-width: $container-large-desktop / 2;
+		}
+	}
+}

@@ -1,0 +1,105 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// 文字・フォント関連設定 ////////////
+body {
+	@extend .font_base;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1.3;
+/*
+	font-family: $fontFamilyMin;
+	* {
+		font-family: $fontFamilyMin;
+	}
+*/
+}
+a {
+	color: $colorMainPale;
+	text-decoration: underline;
+	@include animationOn;
+	&:hover,
+	&:focus {
+		color: $colorAccent;
+	}
+	&:not([href]){
+		color: inherit;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+	&[class*="btn"] {
+		text-decoration: none;
+	}
+}
+
+
+// 字形
+//--------------------------------------------------------------- //
+.font_family_base {
+	font-family: $fontFamilyBase;
+	* {
+		font-family: $fontFamilyBase;
+	}
+}
+.font_family_min {
+	font-family: $fontFamilyMin;
+	* {
+		font-family: $fontFamilyMin;
+	}
+}
+
+
+// 文字色
+//--------------------------------------------------------------- //
+.font_color_base { color: $colorMonoDark;}
+.font_color_main { color: $colorMain;}
+.font_color_main_pale { color: $colorMainPale;}
+.error-message { color: red;}
+
+
+// 文字位置
+//--------------------------------------------------------------- //
+.v_align_middle { vertical-align: middle !important;}
+.v_align_top { vertical-align: top !important;}
+.v_align_bottom { vertical-align: bottom !important;}
+
+.text_nowrap { white-space: nowrap;}
+.text_indent {
+	display: block;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+
+// 文字組
+//--------------------------------------------------------------- //
+.line_height_min {
+	line-height: 1.2;
+}
+
+
+// 文字サイズ
+//--------------------------------------------------------------- //
+.font_ularge { font-size: $fontULarge;}
+.font_xlarge { font-size: $fontXLarge;}
+.font_large { font-size: $fontLarge;}
+.font_medium { font-size: $fontMedium;}
+.font_base { font-size: $fontBase;}
+.font_small { font-size: $fontSmall;}
+.font_notice { font-size: $fontNotice;}
+
+@media (min-width: $screen-sm-min) { // タブレットサイズ以上
+	// 文字サイズ
+	//--------------------------------------------------------------- //
+	.font_ularge { font-size: $fontULargePc;}
+	.font_xlarge { font-size: $fontXLargePc;}
+	.font_large { font-size: $fontLargePc;}
+	.font_medium { font-size: $fontMediumPc;}
+	.font_base { font-size: $fontBasePc;}
+	.font_small { font-size: $fontSmallPc;}
+	.font_notice { font-size: $fontNoticePc;}
+}

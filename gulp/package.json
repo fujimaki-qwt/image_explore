@@ -1,0 +1,28 @@
+{
+  "name": "gulp-frame",
+  "version": "1.0.0",
+  "description": "",
+  "private":true,
+  "main": "index.js",
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-watch": "^4.3.11",
+    "postcss": "^6.0.2",
+    "run-sequence": "^1.2.2"
+  }
+}

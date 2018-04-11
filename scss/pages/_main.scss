@@ -1,0 +1,1173 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// ページ内設定 ////////////
+.prefix {
+	@include PropertySetPrefix(background-size, cover); //ベンダープレフィックス自動付与
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0)), color-stop(1.0, rgba(0,0,0,0.6)));
+	@include ValueSetPrefix(background, linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.6))); //ベンダープレフィックス自動付与
+}
+
+
+
+/* ▼▼▼▼▼ ここから下に独自設定を記述 ▼▼▼▼▼ */
+
+
+
+// sliderProをカスタマイズ
+//--------------------------------------------------------------- //
+.sp-next-arrow,.sp-next-arrow,.sp-previous-arrow,.sp-previous-arrow {
+	&::before,
+	&::after {
+		background-color: blue;
+	}
+}
+.sp-button {
+	border-color: red;
+}
+.sp-selected-button {
+	background-color: pink;
+}
+
+
+// 見出し系
+//--------------------------------------------------------------- //
+.headline_default,
+h2.headline {
+	@extend .margin_b_medium;
+	font-size: $fontXLarge;
+	text-align: center;
+}
+.headline_h3,
+h3.headline {
+	@extend .margin_b_medium;
+	font-size: $fontLarge;
+}
+.headline_h4,
+h4.headline {
+	@extend .margin_b_medium;
+	font-size: $fontMedium;
+}
+
+
+// リスト系
+//--------------------------------------------------------------- //
+
+// カード型リンク（サムネ付き）
+$cardThumbBorder: 1px solid $colorMain; //罫線の設定
+$cardThumbIconColor: $colorMain; //アイコンカラーの設定
+$cardThumbSpace: $spaceXSmall; //通常の間隔設定。0以上で指定（％は非推奨）。初期値は$spaceXSmall
+$cardThumbSpacePc: $grid-gutter-width/2; //PCサイズ時の間隔設定。0以上で指定（％は非推奨）。初期値はBootstrapのcolと同じ
+.card_thumb {
+	@extend .clearfix;
+	margin-top: $cardThumbSpace*2*-1;
+	li {
+		margin-top: $cardThumbSpace*2;
+		line-height: 1.5;
+		padding-left: 0;
+		padding-right: 0;
+		>a,>span {
+			background: $colorMonoLight;
+			display: table;
+			position: relative;
+			border: $cardThumbBorder;
+			color: $colorMonoDark;
+			text-decoration: none;
+			@include animationOn;
+			.card_thumb_title {
+				color: $colorAccentDeep;
+				@extend .font_large;
+				font-weight: normal;
+			}
+			.media-left {
+				padding: 0;
+				img {
+					max-width: 100px;
+					border: 1px solid $colorMonoLight;
+				}
+			}
+			.media-body {
+				@extend .padding_s_small;
+				@extend .padding_v_xsmall;
+				border-left: $cardThumbBorder;
+			}
+		}
+		>a {
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				background-color: $colorMainLight;
+			}
+			&::after {
+				@include materialIcons;
+				top: 50%;
+				right: 0.25em;
+				margin-top: -0.5em;
+				content: "\E315";
+				color: $cardThumbIconColor;
+			}
+			&[href^="#"] {
+				&::after {
+					content: "\E313";
+					color: $cardThumbIconColor;
+				}
+			}
+			&.card_block {
+				&::after {
+					content: "\E315";
+					color: $colorMonoLight;
+					background: $cardThumbIconColor;
+					border-radius: 100px;
+				}
+			}
+			&.card_tri {
+				&::after {
+					content: " ";
+					border: 8px solid transparent;
+					border-right: 8px solid $cardThumbIconColor;
+					border-bottom: 8px solid $cardThumbIconColor;
+					top: auto;
+					right: 4px;
+					bottom: 4px;
+				}
+			}
+		}
+		>span {
+			a {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// カード型リンク（サムネなし）
+$cardLinkBorder: 1px solid $colorMain; //罫線の設定
+$cardLinkIconColor: $colorMain; //アイコンカラーの設定
+$cardLinkSpace: $spaceXSmall/2; //通常の間隔設定。0以上で指定（％は非推奨）。初期値は$spaceXSmall
+$cardLinkSpacePc: $spaceXSmall/2; //PCサイズ時の間隔設定。0以上で指定（％は非推奨）。初期値はBootstrapのcolと同じ
+.card_link {
+	@extend .clearfix;
+	margin-top: $cardLinkSpace*2*-1;
+	li {
+		margin-top: $cardLinkSpace*2;
+		line-height: 1.5;
+		@extend .font_small;
+		padding-left: 0;
+		padding-right: 0;
+		>a,>span {
+			position: relative;
+			display: block;
+			@extend .padding_small;
+			border: $cardLinkBorder;
+			color: $colorFontBase;
+			text-decoration: none;
+			background: $colorMonoLight;
+			&.card_link_link,
+			&.card_link_anchorlink {
+				border: $cardLinkBorder;
+			}
+		}
+		>a {
+			padding-right: 3em;
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: $colorFontBase;
+				background: $colorMainLight;
+			}
+			&::after {
+				@include materialIcons;
+				top: 50%;
+				right: 0.25em;
+				margin-top: -0.5em;
+				content: "\E315";
+				color: $cardLinkIconColor;
+			}
+			&[href^="#"] {
+				&::after {
+					content: "\E313";
+					color: $cardLinkIconColor;
+				}
+			}
+			&.card_block {
+				&::after {
+					content: "\E315";
+					color: $colorMonoLight;
+					background: $cardLinkIconColor;
+					border-radius: 100px;
+				}
+			}
+			&.card_tri {
+				&::after {
+					content: " ";
+					border: 8px solid transparent;
+					border-right: 8px solid $cardLinkIconColor;
+					border-bottom: 8px solid $cardLinkIconColor;
+					top: auto;
+					right: 4px;
+					bottom: 4px;
+				}
+			}
+		}
+		>span {
+			a {
+				text-decoration: underline;
+			}
+		}
+		.card_link_title {
+			border-left: 4px solid $colorMain;
+			padding-left: .5em;
+			margin: 0 0 $spaceXSmall;
+			color: $colorAccentDeep;
+			@extend .font_medium;
+		}
+		[class*="media-"] {
+			img {
+				width: 120px;
+				max-width: none;
+			}
+		}
+	}
+}
+
+// 目次リスト
+$listIndexBorder: 1px solid $colorMain; //罫線の設定
+$listIndexIconColor: $colorMain; //アイコンカラーの設定
+.list_index {
+	border: $listIndexBorder;
+	@extend .padding_medium;
+	.index_list_title {
+		@extend .font_medium;
+		font-weight: bold;
+		color: $colorAccentPale;
+		span {
+			@extend .font_base;
+			font-weight: normal;
+			color: $colorAccentPale;
+		}
+	}
+	.list_index_body {
+		li {
+			margin-top: 5px;
+			line-height: 1.8;
+			a,span {
+				position: relative;
+				display: inline-block;
+				padding-left: 1.25em;
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: $listIndexIconColor;
+					content: "・";
+				}
+			}
+			a {
+				text-decoration: underline;
+			}
+			ol {
+				margin-left: 20px;
+				list-style-type: none;
+				margin-bottom: 0;
+				li {
+					a {
+						padding-left: 1.5em;
+						&::before {
+							@include materialIcons;
+							top: .125em;
+							content: "\E315";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// アイコン付きリスト
+%list_setting {
+	@extend .n_margin_t_xsmall;
+	li {
+		position: relative;
+		@extend .margin_t_xsmall;
+		&::after {
+			@include materialIcons;
+			content: "\E315";
+			left: 0;
+			top: 0;
+			color: $colorMain;
+		}
+		a {
+			//color: $colorFontBase;
+		}
+	}
+}
+.list_link {
+	$listSettingIconSize: 24px; //アイコンのフォントサイズ。デフォルトはマテリアルアイコンのデフォルトと同じ24px
+	@extend %list_setting;
+	li {
+		padding-left: $listSettingIconSize*1.25;
+		&::after {
+			content: "\E315";
+			font-size: $listSettingIconSize;
+		}
+	}
+}
+.list_check {
+	$listSettingIconSize: 24px; //アイコンのフォントサイズ。デフォルトはマテリアルアイコンのデフォルトと同じ24px
+	@extend %list_setting;
+	li {
+		padding-left: $listSettingIconSize*1.25;
+		&::after {
+			content: "\E5CA";
+			font-size: $listSettingIconSize;
+		}
+	}
+}
+.list_check_circle {
+	$listSettingIconSize: 24px; //アイコンのフォントサイズ。デフォルトはマテリアルアイコンのデフォルトと同じ24px
+	@extend %list_setting;
+	li {
+		padding-left: $listSettingIconSize*1.25;
+		&::after {
+			content: "\E86C";
+			font-size: $listSettingIconSize;
+		}
+	}
+}
+.list_comment {
+	@extend %list_setting;
+	li {
+		padding-left: 1.25em;
+		&::after {
+			content: "※";
+			font-size: inherit;
+		}
+	}
+}
+
+
+// ボックス系
+//--------------------------------------------------------------- //
+
+// よくある質問ボックス
+$BoxQABorder: 1px dotted $colorAccentDeep; //罫線の設定
+$BoxQAIconSize: 2em; // アイコンのサイズ設定。単位はem、数値は2em以上を推奨。
+$BoxQAIconRadius: 1000px; // アイコンの角丸設定。デフォルトは真円。
+.box_qa {
+	.box_qa_icon {
+		display: table-cell;
+		@extend .padding_r_small;
+		span {
+			display: inline-block;
+			width: $BoxQAIconSize;
+			height: $BoxQAIconSize;
+			padding: .5em;
+			line-height: 1;
+			text-align: center;
+			@extend .font_large;
+			@extend .font_family_min;
+			border-radius: $BoxQAIconRadius;
+		}
+	}
+	.box_qa_body {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+	}
+	.box_qa_q {
+		width: 100%;
+		@extend .margin_t_small;
+		@extend .padding_small;
+		border-top: $BoxQABorder;
+		@extend .font_medium;
+		font-weight: normal;
+		background: $colorMainClear;
+		.box_qa_icon {
+			span {
+				color: $colorMonoLight;
+				background: $colorAccentDeep;
+			}
+		}
+		&::after {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+			right: auto;
+			transform: none;
+		}
+	}
+	.box_qa_a {
+		width: 100%;
+		margin-top: 0;
+		@extend .padding_small;
+		border-bottom: $BoxQABorder;
+		background: $colorMonoLight;
+		.box_qa_icon {
+			span {
+				color: $colorMonoLight;
+				background: $colorMain;
+			}
+		}
+	}
+}
+
+// 流れボックス
+$BoxFlowBorder: 1px dotted $colorMain; //罫線の設定
+$BoxFlowIconSize: 100%; // アイコン（フォント）のサイズ設定。ベースのフォントサイズを基準としたパーセンテージで設定。
+$BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余白の比率。正の値を設定。
+.box_flow {
+	.box_flow_inner {
+		position: relative;
+		@extend .margin_b_large;
+		@extend .padding_b_large;
+		border-bottom: $BoxFlowBorder;
+		&::after {
+			position: absolute;
+			content: "▼";
+			left: 50%;
+			bottom: ($BoxFlowIconSpace+1em)/2*-1;
+			width: $BoxFlowIconSpace+1em;
+			height: $BoxFlowIconSpace+1em;
+			margin-left: ($BoxFlowIconSpace+1em)/2*-1;
+			padding: ($BoxFlowIconSpace/2)+.05em ($BoxFlowIconSpace/2)*1em ($BoxFlowIconSpace/2)-.05em;
+			font-size: $BoxFlowIconSize;
+			line-height: 1;
+			color: $colorMonoLight;
+			background: $colorMain;
+			border-radius: 1000px;
+		}
+		&:last-of-type {
+			border: none;
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+			&::after {
+				content: none;
+			}
+		}
+	}
+}
+
+
+// ボタン系
+//--------------------------------------------------------------- //
+.btn_hexagon {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_octagonal {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-top: 1.1em;
+	margin-bottom: 1.1em;
+	padding: 0 2em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid blue;
+	border-right: 2px solid blue;
+	background: lightblue;
+	border-radius: 3px;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		height: 1.1em;
+		top: -1.1em;
+		left: -2px;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		height: 1.1em;
+		bottom: -1.1em;
+		left: -2px;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			height: 1.1em;
+			top: -1.1em;
+			right: -2px;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			height: 1.1em;
+			bottom: -1.1em;
+			right: -2px;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_triangle_line {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before,
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: blue;
+	}
+	&::after {
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before,
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: blue;
+		}
+		&::after {
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		span::before {
+			background: lightblue;
+			border-color: lightblue;
+		}
+		&::after,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon_duel {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -2;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: blue;
+		border-radius: 10px 0 0 0;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+		border-radius: 0 0 0 10px;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+			border-radius: 0 10px 0 0;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -2;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: blue;
+			border-radius: 0 0 10px 0;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		span::after {
+			background: lightblue;
+		}
+		&::after,
+		span::before {
+			background: blue;
+		}
+	}
+}
+
+.btn_hexagon_inn {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	padding: .75em 4em;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	color: black;
+	line-height: 1.1;
+	background: blue;
+	span {
+	}
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: 0;
+		right: 20%;
+		border-top: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: 0;
+		right: 20%;
+		border-bottom: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: 0;
+			left: 20%;
+			border-top: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: 0;
+			left: 20%;
+			border-bottom: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: lightblue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon_inn {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	padding: .75em 4em;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	color: black;
+	line-height: 1.1;
+	background: blue;
+	span {
+	}
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: 0;
+		right: 20%;
+		border-top: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: 0;
+		right: 20%;
+		border-bottom: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: 0;
+			left: 20%;
+			border-top: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: 0;
+			left: 20%;
+			border-bottom: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: lightblue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+/* ▲▲▲▲▲ ここから上に独自設定を記述 ▲▲▲▲▲ */
+
+
+//display
+//--------------------------------------------------------------- //
+.display_block { display: block;}
+.inline_block { display: inline-block;}
+.full { width: 100%;}
+.fit { max-width: 100%;}
+
+
+//images
+//--------------------------------------------------------------- //
+a {
+	>img {
+		@include animationOn;
+	}
+	&:hover {
+		>img {
+			opacity: .8;
+		}
+	}
+}
+img[class*="pull-"] {
+	max-width: 45%;
+	@extend .margin_b_xsmall;
+}
+img.pull-left {
+	@extend .margin_r_small;
+}
+img.pull-right {
+	@extend .margin_l_small;
+}
+
+
+// 罫線
+//--------------------------------------------------------------- //
+.border_none { border: none; border-bottom: 1px solid transparent;}
+.border_main_1 { border: 1px solid $colorMain;}
+
+
+// 背景色
+//--------------------------------------------------------------- //
+.bg_color_main { background: $colorMain;}
+.bg_color_main_clear { background: $colorMainLight;}
+
+
+@media (max-width: $screen-xs-max) { // SPサイズ（横）以下
+}
+
+@media (max-width: $screen-sm-max) { // タブレットサイズ以下
+}
+
+@media (max-width: $screen-md-max) { // PCサイズ（小）以下
+}
+
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+}
+
+
+@media (min-width: $screen-xs-min) { // SPサイズ（横）以上
+}
+
+@media (min-width: $screen-sm-min) { // タブレットサイズ以上
+
+	// 見出し系
+	//--------------------------------------------------------------- //
+	.headline_default {
+		letter-spacing: .1em;
+		.font_accent {
+		}
+	}
+	.headline_flex {
+		display: block;
+		margin-bottom: $spaceSmall;
+		.headline_flex_no,
+		.headline_flex_tx {
+			display: block;
+			text-align: center;
+		}
+		.headline_flex_no {
+			padding-bottom: 10px;
+			&::after {
+				width: 50px;
+				margin-left: -25px;
+			}
+		}
+	}
+	.headline_flex_reverse {
+		display: table;
+		.headline_flex_no,
+		.headline_flex_tx {
+			display: table-cell;
+		}
+		.headline_flex_tx {
+			text-align: left;
+		}
+	}
+
+	// リスト系
+	//--------------------------------------------------------------- //
+	.card_thumb {
+		margin-top: $cardThumbSpacePc*2*-1;
+		margin-left: -$cardThumbSpacePc;
+		margin-right: -$cardThumbSpacePc;
+		li {
+			margin-top: $cardThumbSpacePc*2;
+			padding-left: $cardThumbSpacePc;
+			padding-right: $cardThumbSpacePc;
+			&:nth-of-type(2n-1) {
+				//clear: both;
+			}
+			>a,>span {
+				.card_thumb_title {
+				}
+				.media-left {
+					img {
+						max-width: 120px;
+					}
+				}
+				.media-body {
+				}
+			}
+		}
+	}
+	.card_link {
+		margin-top: $cardLinkSpacePc*2*-1;
+		margin-left: -$cardLinkSpacePc;
+		margin-right: -$cardLinkSpacePc;
+		li {
+			padding-left: $cardLinkSpace;
+			padding-right: $cardLinkSpace;
+			&:nth-of-type(2n-1) {
+				//clear: both;
+			}
+		}
+	}
+
+}
+
+@media (min-width: $screen-md-min) { // PCサイズ（小）以上
+}
+
+@media (min-width: $screen-lg-min) { // PCサイズ（大）以上
+}
+
