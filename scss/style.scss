@@ -59,7 +59,7 @@
 // 追加設定
 @import 'module/material_icons';
 //@import 'module/spacer';
-// @import 'module/responsive';
+//@import 'module/responsive';
 
 // ベース設定
 @import 'base/reset';
@@ -78,6 +78,7 @@
 //@import 'component/sp_menu';
 
 // 独自設定
+@import 'pages/fujimaki';
 //@import 'pages/main';
 //@import 'pages/index';
 //@import 'pages/under';

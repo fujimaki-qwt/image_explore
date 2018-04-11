@@ -2,6 +2,13 @@
 $(function(){
 	$('#js-upload-image').on('change', function(e){
 		var file = e.target.files[0];
+		if (!file) {
+			return;
+		}
+		if(!file.type.match('image*')) {
+			alert('画像を選択してください');
+			return;
+		}
 
 		var r = new FileReader();
 		r.onload = function(e) {
@@ -27,6 +34,8 @@ $(function(){
 				processData: false
 			}).done(function(data) {
 				$('#js-response-display').text(data.description.tags.join(', '));
+				$("#js-image-display").attr('src', r.result)
+
 			}).always(function() {
 				$('#js-image-loading').hide();
 				alert('ajax終わり');
@@ -36,15 +45,10 @@ $(function(){
 	});
 });
 </script>
-<style>
-.loading {
-	opacity: 0.5;
-}
-</style>
 <?php echo $this->element('Common/loading'); ?>
 
 <?php echo $this->Form->create(false, ['type' => 'file']); ?>
+	<img id="js-image-display" src=""></img>
 	<?php echo $this->Form->file('uploadImage', ['id' => 'js-upload-image']); ?>
-	<div id="js-response-display"></div>
 	<?php echo $this->Form->submit('画像をアップロード', ['class' => 'btn btn-primary']); ?>
 <?php echo $this->Form->end(); ?>

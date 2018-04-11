@@ -14,4 +14,4 @@ run_gulp:
 	@echo '############################'
 	@echo '# 開発用にgulpを起動します #'
 	@echo '############################'
-	cd gulp; npm run serve;
+	cd gulp; npm run build;

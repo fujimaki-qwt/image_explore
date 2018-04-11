@@ -7,6 +7,7 @@
 	<?php echo $this->Html->meta('icon') ?>
 
 	<?php echo $this->Html->css('style.css'); ?>
+	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->script('jquery-3.1.1.min.js'); ?>
 
 	<?php echo $this->fetch('meta') ?>
@@ -17,7 +18,9 @@
 	<?php echo $this->Flash->render() ?>
 	<div>
 		<?php echo $this->element('header'); ?>
-		<?php echo $this->fetch('content') ?>
+		<div class="container">
+			<?php echo $this->fetch('content') ?>
+		</div>
 	</div>
 </body>
 </html>
