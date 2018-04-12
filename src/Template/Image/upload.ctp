@@ -33,8 +33,8 @@ $(function(){
 				data: contents,
 				processData: false
 			}).done(function(data) {
-				$('#js-response-display').text(data.description.tags.join(', '));
-				$("#js-image-display").attr('src', r.result)
+				$('#js-response-tag-display').text(data.description.tags.join(', '));
+				//$("#js-image-display").attr('src', r.result)
 
 			}).always(function() {
 				$('#js-image-loading').hide();
@@ -49,6 +49,7 @@ $(function(){
 
 <?php echo $this->Form->create(false, ['type' => 'file']); ?>
 	<img id="js-image-display" src=""></img>
+	<div id="js-response-tag-display"></div>
 	<?php echo $this->Form->file('uploadImage', ['id' => 'js-upload-image']); ?>
 	<?php echo $this->Form->submit('画像をアップロード', ['class' => 'btn btn-primary']); ?>
 <?php echo $this->Form->end(); ?>

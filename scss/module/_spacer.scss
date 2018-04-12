@@ -141,7 +141,7 @@
 .n_margin_v_large { margin-top: -$spaceMedium; margin-bottom: -$spaceMedium;}
 .n_margin_v_xlarge { margin-top: -$spaceLarge; margin-bottom: -$spaceLarge;}
 
-@media (min-width: $container-max-widths) { // タブレットサイズ以上
+@media (min-width: $screen-sm-min) { // タブレットサイズ以上
 	.margin_auto { margin: auto;}
 
 	.margin_xsmall { margin: $spaceXSmall;}

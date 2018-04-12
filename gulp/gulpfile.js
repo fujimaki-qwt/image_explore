@@ -53,6 +53,7 @@ gulp.task('clean', del.bind(null, ['.tmp'], {dot: true, force: true}));
 
 // define public task
 gulp.task('serve', function(cb){
+    buildMode = true;
     runSequence('clean','scss','scss-watch', cb);
 });
 

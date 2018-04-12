@@ -45,7 +45,7 @@
 // `-style.scss					# primary Sass file `
 
 // Bootstrap - 変数定義
-//@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/variables";
 
 // 定義
 @import 'helpers/variables';
@@ -53,23 +53,22 @@
 @import 'helpers/mixins';
 
 // Bootstrap
-//@import 'vendors/bootstrap';
-@import 'vendors/bootstrap-4/bootstrap';
+@import 'vendors/bootstrap';
 
 // 追加設定
 @import 'module/material_icons';
-//@import 'module/spacer';
-//@import 'module/responsive';
+@import 'module/spacer';
+@import 'module/responsive';
 
 // ベース設定
 @import 'base/reset';
-//@import 'base/typography';
+@import 'base/typography';
 
 // 構成パーツ
-//@import 'layout/header';
+@import 'layout/header';
 @import 'layout/footer';
 @import 'layout/sidebar';
-//@import 'layout/forms';
+@import 'layout/forms';
 
 // 拡張機能
 //@import 'component/accordion';
@@ -78,7 +77,6 @@
 //@import 'component/sp_menu';
 
 // 独自設定
-@import 'pages/fujimaki';
-//@import 'pages/main';
+@import 'pages/main';
 //@import 'pages/index';
 //@import 'pages/under';
