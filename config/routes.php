@@ -9,6 +9,7 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/',             ['controller' => 'Top', 'action' => 'index']);
+    $routes->connect('/search',       ['controller' => 'Search', 'action' => 'index']);
     $routes->connect('/image_upload', ['controller' => 'Image', 'action' => 'upload']);
     $routes->fallbacks(DashedRoute::class);
 });
