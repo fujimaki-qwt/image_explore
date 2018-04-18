@@ -6,7 +6,7 @@ use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
 
-class SearchController extends AppController
+class ResultController extends AppController
 {
 	public function index()
 	{
