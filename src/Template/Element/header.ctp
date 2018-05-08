@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="col-xs-4">
 			<a href="<?php echo $this->Url->build(['controller' => 'Top', 'action' => 'index']); ?>" class="head_logo">
-				<?php echo $this->Html->image('https://placehold.jp/200x200.png', ['class' => '','alt' => 'ここにロゴ']) ?>
+				<?php echo $this->Html->image('logo_under.svg', ['class' => '','alt' => '']) ?>
 			</a>
 		</div>
 		<div class="col-xs-4 head_search">

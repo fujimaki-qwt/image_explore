@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="col-xs-4 col-xs-offset-4 padding_none margin_b_xlarge">
 			<h1 class="text-center top_logo margin_b_large">
-				<?php echo $this->Html->image('https://placehold.jp/200x200.png', ['class' => '','alt' => 'ここにロゴ']) ?>
+				<?php echo $this->Html->image('logo.svg', ['class' => '','alt' => '']) ?>
 			</h1>
 			<?php echo $this->element('search_form'); ?>
 		</div>

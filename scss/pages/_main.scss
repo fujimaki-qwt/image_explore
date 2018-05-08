@@ -1088,6 +1088,53 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 	transform: translateY(-50%);
 }
 
+.search_form {
+	position: relative;
+	width: 370px;
+	height: 40px;
+	line-height: 1;
+	.search_form_input {
+		padding: 7px;
+		border: 1px solid $colorMain;
+		border-radius: 5px;
+		width: 100%;
+		&::placeholder {
+			color: $colorMonoDeep; 
+		}
+	}
+	.search_form_submit {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: calc(50% - 20px);
+		right: 0;
+		border-radius: 0 4px 4px 0;
+		background: $colorMain;
+		border: none;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 16px;
+			height: 16px;
+			top: calc(50% - 11px);
+			left: calc(50% - 10px);
+			border-radius: 50%;
+			border: 2px solid $colorMonoLight;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			width: 10px;
+			height: 6px;
+			top: calc(50% + 5px);
+			left: 50%;
+			border-top: solid 2px $colorMonoLight;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
 //display
 //--------------------------------------------------------------- //
 .display_block { display: block;}
