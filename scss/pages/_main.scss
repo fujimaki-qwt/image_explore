@@ -365,6 +365,10 @@ $listIndexIconColor: $colorMain; //アイコンカラーの設定
 // ボックス系
 //--------------------------------------------------------------- //
 
+.wrapper{
+	@extend .padding_v_large;
+}
+
 // よくある質問ボックス
 $BoxQABorder: 1px dotted $colorAccentDeep; //罫線の設定
 $BoxQAIconSize: 2em; // アイコンのサイズ設定。単位はem、数値は2em以上を推奨。
@@ -1042,6 +1046,48 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 /* ▲▲▲▲▲ ここから上に独自設定を記述 ▲▲▲▲▲ */
 
 
+//INDEX
+//--------------------------------------------------------------- //
+.image_field{
+	@extend .shadow;
+	display: block;
+	overflow: hidden;
+	width: 100%;/* トリミングしたい枠の幅 */
+	padding-top: 99%;
+	position: relative;
+	img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		width: auto;
+		height: 100%;
+		max-width: none;
+	}
+
+	&:hover{
+		.image_field_data{
+			display: block !important;
+			position: absolute;
+			background: $colorTransDark;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
+	}
+}
+
+.smart_vertical > *{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
 //display
 //--------------------------------------------------------------- //
 .display_block { display: block;}
@@ -1049,6 +1095,7 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 .full { width: 100%;}
 .fit { max-width: 100%;}
 
+.shadow{ box-shadow: $colorTransShadow;}
 
 //images
 //--------------------------------------------------------------- //

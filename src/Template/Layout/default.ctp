@@ -9,6 +9,7 @@
 	<?php echo $this->Html->css('style.css'); ?>
 	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->script('jquery-3.1.1.min.js'); ?>
+	<?php echo $this->Html->script('jquery.common.js'); ?>
 
 	<?php echo $this->fetch('meta') ?>
 	<?php echo $this->fetch('css') ?>

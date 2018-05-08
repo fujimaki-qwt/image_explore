@@ -18,39 +18,39 @@ $fontFamilyMin: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino M
 
 
 // カラー
-$colorMonoDark: #000000;
-$colorMonoDeep: #555;
-$colorMonoPale: #afb4b9;
-$colorMonoClear: #f6f6f6;
-$colorMonoLight: #fff;
+$colorMonoDark: #333333;
+$colorMonoDeep: #BEBEBE;
+$colorMonoPale: #E5E5E5;
+$colorMonoClear: 000;
+$colorMonoLight: #FFFFFF;
 
-$colorMain: #948664;
-$colorMainDark: #6e6347; //暗い
-$colorMainDeep: #6e6347; //やや暗い
-$colorMainPale: #A08F68; //やや明るい
-$colorMainClear: #f3ebdf; //明るい
-$colorMainLight: #f7f4ee; //かなり明るい
+$colorMain: #3FC5EF;
+$colorMainDark: 000; //暗い
+$colorMainDeep: 000; //やや暗い
+$colorMainPale: 000; //やや明るい
+$colorMainClear: 000; //明るい
+$colorMainLight: 000; //かなり明るい
 
-$colorAccent: #e44e5e;
+$colorAccent: #00CA58;
 $colorAccentDark: darken($colorAccent, 15%); //暗い
 $colorAccentDeep: darken($colorAccent, 30%); //やや暗い
 $colorAccentPale: lighten($colorAccent, 15%); //やや明るい
 $colorAccentClear: #f6e6e7; //明るい
 $colorAccentLight: #fff6f7; //かなり明るい
 
-$colorFontBase: #333;
+$colorFontBase: #333333;
 
-$colorTransLight: rgba(255,255,255,.75);
-$colorTransDark: rgba(0,0,0,.75);
-$colorTransShadow: 0 1px 5px rgba(0,0,0,.15);
+$colorTransLight: rgba(255, 255, 255, 0.75);
+$colorTransDark: rgba(0, 0, 0, 0.6);
+$colorTransShadow: 0 1px 5px rgba(0, 0, 0, 0.16);
 
 
 // スペース
-$spaceXSmall: 8px;
-$spaceSmall: 15px;
+$spaceXSmall: 10px;
+$spaceSmall: 20px;
 $spaceMedium: 30px;
-$spaceLarge: 45px;
-$spaceXLarge: 60px;
+$spaceLarge: 60px;
+$spaceXLarge: 100px;
 
 
 // フォントサイズ
@@ -64,7 +64,7 @@ $fontNotice: 11px;
 
 $fontULargePc: 40px;
 $fontXLargePc: 32px;
-$fontLargePc: 26px;
+$fontLargePc: 30px;
 $fontMediumPc: 20px;
 $fontBasePc: 16px;
 $fontSmallPc: 14px;
