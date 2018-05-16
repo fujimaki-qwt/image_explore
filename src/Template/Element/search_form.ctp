@@ -7,8 +7,14 @@
 </div>
 */?>
 
-
-<div class="search_form center-block">
-	<input class="search_form_input" type="text" placeholder="素材のイメージを入力してみよう！">
+<form class="search_form center-block">
+	<div class="form-group">
+		<div class="search_word" contenteditable="true">
+			<a href="#"><span class="search_tag">女性</span></a>
+			<a href="#"><span class="search_tag">hoge</span></a>
+			<a href="#"><span class="search_tag">huga</span></a>
+		</div>
+		<input type="text" name="search_word" class="form-control search_form_input" value="" placeholder="素材のイメージを入力してみよう！">
+	</div>
 	<button class="search_form_submit" type="submit"></button>
-</div>
+</form>
