@@ -211,5 +211,12 @@ $(window).on('load', function(){
 
 //〓〓〓 モーダル設定 〓〓〓
 $(function(){
-	$(".iziModal").iziModal();
-})
+	$(".iziModal").iziModal({
+		overlayColor: "rgba(0,0,0,0.6)",
+		width: "1170px",
+		top: "30px",
+		bottom: "30px",
+		transitionIn: "comingIn",
+		transitionOut: "fadeOutDown",
+		});
+});

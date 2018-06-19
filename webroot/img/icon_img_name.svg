@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 23.001">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #3fc5ef;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="9" height="12"/>
+    </clipPath>
+  </defs>
+  <g id="icon_img_name" transform="translate(-577 -706)">
+    <path id="除外_1" data-name="除外 1" class="cls-2" d="M-4241-2959h-13a2,2,0,0,1-2-2v-19a2,2,0,0,1,2-2h10l5,5v16A2,2,0,0,1-4241-2959Z" transform="translate(4833 3688)"/>
+    <g id="リピートグリッド_8" data-name="リピートグリッド 8" class="cls-3" transform="translate(581 717)">
+      <g transform="translate(-581 -717)">
+        <rect id="長方形_59" data-name="長方形 59" class="cls-4" width="9" height="1" transform="translate(581 717)"/>
+      </g>
+      <g transform="translate(-581 -714)">
+        <rect id="長方形_59-2" data-name="長方形 59" class="cls-4" width="9" height="1" transform="translate(581 717)"/>
+      </g>
+      <g transform="translate(-581 -711)">
+        <rect id="長方形_59-3" data-name="長方形 59" class="cls-4" width="9" height="1" transform="translate(581 717)"/>
+      </g>
+    </g>
+  </g>
+</svg>

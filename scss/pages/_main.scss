@@ -1081,7 +1081,64 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 		}
 	}
 }
-
+%image_data_icons{
+	content: "";
+	display: inline-block;
+	vertical-align: top;
+}
+.image_data_name{
+	&::before {
+		@extend %image_data_icons;
+		width: 1.5em;
+		height: 1.5em;
+		background: url(../img/icon_img_name.svg) no-repeat;
+	}
+}
+.image_data_size{
+	&::before {
+		@extend %image_data_icons;
+		width: 1.2em;
+		height: 1.2em;
+		background: url(../img/icon_img_size.svg) no-repeat;
+	}
+}
+.btn_gradient_default{
+	line-height: 1;
+	font-size: $fontMedium;
+	color: $colorMonoLight;
+	padding: $spaceXSmall $spaceMedium;
+	border-radius: 20px; 
+	box-shadow: $colorTransShadow;
+	opacity: 1;
+	transition: all .3s;
+	// FF3.6-15
+	background: -moz-linear-gradient(-45deg, rgba(63,239,239,1) 0%, rgba(147,191,247,1) 50%, rgba(217,152,255,1) 100%);
+	 // Chrome10-25,Safari5.1-6
+	 background: -webkit-linear-gradient(-45deg, rgba(63,239,239,1) 0%,rgba(147,191,247,1) 50%,rgba(217,152,255,1) 100%);
+	 // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+	 background: linear-gradient(135deg, rgba(63,239,239,1) 0%,rgba(147,191,247,1) 50%,rgba(217,152,255,1) 100%);
+	 &:hover {
+	 	color: $colorMonoLight;
+		opacity: .5;
+	}
+}
+.btn_gradient_small {
+	@extend .btn_gradient_default;
+	padding: 5px $spaceMedium;
+	font-size: fontBase;
+}
+.btn_close {
+	margin: $spaceXSmall;
+	display: inline-block;
+	color: $colorMonoLight;
+	background: $colorMonoDeep;
+	padding: 5px;
+	border-radius: 100%;
+	line-height: 	0.7;
+	&:hover {
+		cursor: pointer;
+	}
+}
 .smart_vertical > *{
 	position: relative;
 	top: 50%;
@@ -1089,7 +1146,23 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-
+.btn_tag {
+	display: inline-block;
+	line-height: 0.9;
+	color: $colorMain;
+	background: $colorMonoLight;
+	border: 1px solid $colorMain;
+	border-radius: 20px;
+	padding: 5px 15px;
+	margin-left: 5px;
+	font-size: $fontBase;
+	transition: all .3s;
+	&:hover {
+		cursor: pointer;
+		color: $colorMonoLight;
+		background: $colorMain;
+	}
+}
 .search_form {
 	position: relative;
 	width: 370px;
@@ -1107,23 +1180,6 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 		border-radius: 5px;
 		width: 100%;
 		height: 100%;
-	}
-	.search_tag {
-		display: inline-block;
-		line-height: 0.9;
-		color: $colorMain;
-		background: $colorMonoLight;
-		border: 1px solid $colorMain;
-		border-radius: 20px;
-		padding: 5px 15px;
-		margin-left: 5px;
-		font-size: $fontBase;
-		transition: all .3s;
-		&:hover {
-			cursor: pointer;
-			color: $colorMonoLight;
-			background: $colorMain;
-		}
 	}
 	.search_form_input {
 		visibility: hidden;
