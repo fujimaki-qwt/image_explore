@@ -208,3 +208,8 @@ $(window).on('load', function(){
 		return false;
 	}
 });
+
+//〓〓〓 モーダル設定 〓〓〓
+$(function(){
+	$(".iziModal").iziModal();
+})

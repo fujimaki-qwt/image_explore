@@ -1068,9 +1068,11 @@ $BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余
 	}
 
 	&:hover{
+		cursor: pointer;
 		.image_field_data{
 			display: block !important;
 			position: absolute;
+			color: $colorMonoLight;
 			background: $colorTransDark;
 			top: 0;
 			right: 0;
