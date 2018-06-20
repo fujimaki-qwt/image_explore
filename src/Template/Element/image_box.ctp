@@ -6,8 +6,7 @@
 </div>
 
 <div class="iziModal">
-	<a class="btn_close" data-izimodal-close="">×</a>
-	<div class="padding_medium padding_t_none">
+	<div class="padding_medium">
 		<div class="image_data_parent">
 			<p class=" margin_b_small">
 				<?php echo $this->Html->image('https://placehold.jp/1592x1194.png', ['class' => 'full','alt' => '##########']) ?>
