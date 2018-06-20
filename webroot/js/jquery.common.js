@@ -213,7 +213,7 @@ $(window).on('load', function(){
 $(function(){
 	$(".iziModal").iziModal({
 		overlayColor: "rgba(0,0,0,0.6)",
-		width: "1170px",
+		width: "960px",
 		top: "30px",
 		bottom: "30px",
 		transitionIn: "comingIn",
